@@ -13,8 +13,8 @@
             <td style="vertical-align:middle" class="text-center"><b>Action</b></td>
         </tr>
         <?php
-
-        $qurey = "SELECT user_id FROM online WHERE last_time_seen > DATE_SUB(NOW(), INTERVAL 50 MINUTE)";
+        $online_time = ONLINE_TIME;
+        $qurey = "SELECT user_id FROM online WHERE last_time_seen > DATE_SUB(NOW(), INTERVAL $online_time MINUTE)";
         $result = query($qurey,MULTIPLE_RETURN);
         if (mysqli_num_rows($result) > 0){
             $serial = 1;

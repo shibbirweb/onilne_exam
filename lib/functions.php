@@ -1,4 +1,5 @@
 <?php
+
 require_once 'constant.php';
 
 function debug($data){
@@ -9,6 +10,11 @@ function debug($data){
 
 function updateLastSeen($id){
     $query = "UPDATE online SET last_time_seen = NOW() WHERE user_id = '$id'";
+    query($query);
+}
+function logoutSeen($id){
+    $online_time = ONLINE_TIME;
+    $query = "UPDATE online SET last_time_seen = DATE_SUB(NOW(), INTERVAL $online_time MINUTE) WHERE user_id = '$id'";
     query($query);
 }
 
@@ -22,7 +28,12 @@ function query($query, $query_type = NO_RETURN){
     global $con;
     switch ($query_type){
         case NO_RETURN:
-            mysqli_query($con, $query) or die("Query failed: ".mysqli_error($con));
+            $result = mysqli_query($con, $query) or die("Query failed: ".mysqli_error($con));
+            if ($result){
+                return true;
+            }else{
+                return false;
+            }
             break;
         case SINGLE_RETURN:
             $result = mysqli_query($con, $query) or die("Query failed: ".mysqli_error($con));
@@ -33,4 +44,8 @@ function query($query, $query_type = NO_RETURN){
             return $result;
             break;
     }
+}
+
+function redirect($location){
+    header("Location:".$location);
 }
