@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2018 at 05:08 AM
+-- Generation Time: Dec 09, 2018 at 10:26 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -39,7 +39,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
-(1, 'sharif', 'sh164211');
+(1, 'sharif', 'sh164211'),
+(2, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,12 @@ INSERT INTO `answer` (`id`, `qid`, `ansid`) VALUES
 (27, '5bbb5a7ee5be1', '5bbb5a7eedd6e'),
 (28, '5bbb5a7f1cffd', '5bbb5a7f24ffa'),
 (29, '5bbb5a7f50860', '5bbb5a7f587d3'),
-(30, '5bbb5a7f6633a', '5bbb5a7f6b922');
+(30, '5bbb5a7f6633a', '5bbb5a7f6b922'),
+(31, '5c0d773daab1b', '5c0d773dc1764'),
+(32, '5c0d773de62ae', '5c0d773dec2b2'),
+(33, '5c0d773e16a92', '5c0d773e1cabb'),
+(34, '5c0d773e3b4df', '5c0d773e414dd'),
+(35, '5c0d773e7444b', '5c0d773e8063b');
 
 -- --------------------------------------------------------
 
@@ -127,13 +133,10 @@ CREATE TABLE `history` (
 --
 
 INSERT INTO `history` (`id`, `username`, `eid`, `score`, `level`, `correct`, `wrong`, `date`, `timestamp`, `status`, `score_updated`) VALUES
-(2, 'sharif', '5b2f35e7a2c9f', 0, 0, 0, 0, '2018-06-24 06:41:21', 1529822422, 'finished', 'true'),
-(3, 'sharif', '5b2f38a4ae710', 0, 2, 0, 0, '2018-06-24 06:42:44', 1529822502, 'finished', 'true'),
 (4, 'sajib', '5b2f3a5b39e1c', 0, 0, 0, 0, '2018-06-24 06:49:45', 1529822964, 'finished', 'true'),
 (5, 'sajib', '5b2f35e7a2c9f', 0, 0, 0, 0, '2018-06-24 07:53:51', 1529826770, 'finished', 'true'),
 (6, 'sajib', '5b2f36d104574', 0, 0, 0, 0, '2018-06-24 08:03:30', 1529827392, 'finished', 'true'),
 (7, 'sajib', '5b2f38a4ae710', 0, 0, 0, 0, '2018-06-24 08:05:22', 1529827456, 'finished', 'true'),
-(10, 'sharif', '5b2f36d104574', 2, 2, 2, 0, '2018-06-25 10:22:51', 1529922110, 'finished', 'true'),
 (12, 'arif', '5b2f35e7a2c9f', 1, 2, 1, 1, '2018-06-25 10:32:15', 1529922674, 'finished', 'true'),
 (13, 'arif', '5b2f3a5b39e1c', 2, 2, 2, 0, '2018-06-25 10:33:25', 1529922765, 'finished', 'true'),
 (14, 'arif', '5b2f36d104574', 2, 2, 2, 0, '2018-06-25 10:34:03', 1529922816, 'finished', 'true'),
@@ -142,17 +145,14 @@ INSERT INTO `history` (`id`, `username`, `eid`, `score`, `level`, `correct`, `wr
 (17, 'sakib', '5b2f36d104574', 1, 2, 1, 1, '2018-06-26 02:09:50', 1529978929, 'finished', 'true'),
 (18, 'sakib', '5b2f3a5b39e1c', 0, 0, 0, 0, '2018-07-05 15:25:38', 1530804277, 'finished', 'true'),
 (19, 'mollah', '5b2f3a5b39e1c', 1, 1, 1, 1, '2018-09-08 13:28:07', 1536413227, 'finished', 'true'),
-(20, 'sharifa', '5b2f36d104574', 1, 1, 1, 0, '2018-09-09 13:10:57', 1536498595, 'finished', 'true'),
-(21, 'sharifa', '5b2f35e7a2c9f', 0, 0, 0, 0, '2018-09-10 04:55:22', 1536555261, 'finished', 'true'),
-(22, 'sharifa', '5b2f3a5b39e1c', 0, 0, 0, 0, '2018-09-18 04:33:25', 1537245144, 'finished', 'true'),
-(23, 'sharif', '5b2f3a5b39e1c', 1, 1, 1, 0, '2018-09-18 04:33:48', 1537245166, 'finished', 'true'),
 (24, 'mollah', '5bbb58cff2fdc', 0, 3, 0, 2, '2018-10-09 04:34:01', 1539059459, 'finished', 'true'),
-(25, 'sharif', '5bbb58cff2fdc', 0, 2, 0, 1, '2018-12-03 17:27:54', 1539059489, 'finished', 'true'),
 (26, 'mollah', '5bbb567c6c1ec', 0, 1, 0, 2, '2018-11-05 12:18:11', 1541420109, 'finished', 'true'),
-(27, 'sharif', '5bbb567c6c1ec', 1, 1, 1, 0, '2018-12-03 17:19:22', 1543857477, 'finished', 'true'),
 (28, 'shibbirweb', '5b2f36d104574', 2, 2, 2, 0, '2018-12-03 21:03:56', 1543870990, 'finished', 'true'),
 (30, 'shibbirweb', '5bbb4fe0e56c6', 5, 6, 5, 1, '2018-12-04 05:21:42', 1543900713, 'finished', 'true'),
-(31, 'shibbirweb', '5b2f38a4ae710', 2, 3, 2, 1, '2018-12-04 20:49:41', 1543956534, 'finished', 'true');
+(31, 'shibbirweb', '5b2f38a4ae710', 2, 3, 2, 1, '2018-12-04 20:49:41', 1543956534, 'finished', 'true'),
+(32, 'shibbirweb', '5b2f3a5b39e1c', 2, 2, 2, 0, '2018-12-09 20:00:20', 1544385559, 'finished', 'true'),
+(33, 'shibbirweb', '5bbb58cff2fdc', 0, 0, 0, 0, '2018-12-09 20:03:29', 1544385628, 'finished', 'true'),
+(34, 'shibbirweb', '5c0d76ca8d731', 0, 1, 0, 0, '2018-12-09 20:39:05', 1544386384, 'finished', 'true');
 
 -- --------------------------------------------------------
 
@@ -171,10 +171,11 @@ CREATE TABLE `online` (
 --
 
 INSERT INTO `online` (`id`, `user_id`, `last_time_seen`) VALUES
-(2, 8, '2018-12-05 03:32:23'),
+(2, 8, '2018-12-10 02:39:05'),
 (3, 3, '2018-12-04 12:55:24'),
 (4, 4, '2018-12-05 01:24:05'),
-(5, 9, '2018-12-05 02:23:38');
+(5, 9, '2018-12-05 02:23:38'),
+(6, 6, '2018-12-10 01:22:38');
 
 -- --------------------------------------------------------
 
@@ -301,7 +302,27 @@ INSERT INTO `options` (`id`, `qid`, `option`, `optionid`) VALUES
 (117, '5bbb5a7f6633a', '{body;color:black;}', '5bbb5a7f6b918'),
 (118, '5bbb5a7f6633a', 'body:color=black;', '5bbb5a7f6b921'),
 (119, '5bbb5a7f6633a', 'body {color: black;}', '5bbb5a7f6b922'),
-(120, '5bbb5a7f6633a', 'body:color=black;', '5bbb5a7f6b924');
+(120, '5bbb5a7f6633a', 'body:color=black;', '5bbb5a7f6b924'),
+(121, '5c0d773daab1b', 'option a', '5c0d773dc175f'),
+(122, '5c0d773daab1b', 'option b', '5c0d773dc1764'),
+(123, '5c0d773daab1b', 'option c', '5c0d773dc1766'),
+(124, '5c0d773daab1b', 'option c', '5c0d773dc1767'),
+(125, '5c0d773de62ae', 'a', '5c0d773dec2ac'),
+(126, '5c0d773de62ae', 'b', '5c0d773dec2b2'),
+(127, '5c0d773de62ae', 'c', '5c0d773dec2b3'),
+(128, '5c0d773de62ae', 'd', '5c0d773dec2b5'),
+(129, '5c0d773e16a92', 'k', '5c0d773e1cab5'),
+(130, '5c0d773e16a92', 'l', '5c0d773e1cabb'),
+(131, '5c0d773e16a92', 'm', '5c0d773e1cabc'),
+(132, '5c0d773e16a92', 'n', '5c0d773e1cabe'),
+(133, '5c0d773e3b4df', 'a', '5c0d773e414d4'),
+(134, '5c0d773e3b4df', 'b', '5c0d773e414da'),
+(135, '5c0d773e3b4df', 'n', '5c0d773e414db'),
+(136, '5c0d773e3b4df', 'b', '5c0d773e414dd'),
+(137, '5c0d773e7444b', 'i', '5c0d773e80636'),
+(138, '5c0d773e7444b', 'o', '5c0d773e8063b'),
+(139, '5c0d773e7444b', 'p', '5c0d773e8063d'),
+(140, '5c0d773e7444b', 'j', '5c0d773e8063e');
 
 -- --------------------------------------------------------
 
@@ -349,7 +370,12 @@ INSERT INTO `questions` (`id`, `eid`, `qid`, `qns`, `choice`, `sn`) VALUES
 (27, '5bbb58cff2fdc', '5bbb5a7ee5be1', 'What does HTML stand for?', 4, 3),
 (28, '5bbb58cff2fdc', '5bbb5a7f1cffd', 'Who is making the Web standards?', 4, 4),
 (29, '5bbb58cff2fdc', '5bbb5a7f50860', 'What does CSS stand for?', 4, 5),
-(30, '5bbb58cff2fdc', '5bbb5a7f6633a', 'Which is the correct CSS syntax?', 4, 6);
+(30, '5bbb58cff2fdc', '5bbb5a7f6633a', 'Which is the correct CSS syntax?', 4, 6),
+(31, '5c0d76ca8d731', '5c0d773daab1b', 'First Question', 4, 1),
+(32, '5c0d76ca8d731', '5c0d773de62ae', 'Another question', 4, 2),
+(33, '5c0d76ca8d731', '5c0d773e16a92', 'Third question', 4, 3),
+(34, '5c0d76ca8d731', '5c0d773e3b4df', 'This is fourth question', 4, 4),
+(35, '5c0d76ca8d731', '5c0d773e7444b', 'This is fifth question', 4, 5);
 
 -- --------------------------------------------------------
 
@@ -374,13 +400,14 @@ CREATE TABLE `quiz` (
 --
 
 INSERT INTO `quiz` (`id`, `eid`, `title`, `correct`, `wrong`, `total`, `time`, `date`, `status`) VALUES
-(2, '5b2f35e7a2c9f', 'Html', 1, 0, 2, 1, '2018-10-09 04:19:52', 'disabled'),
-(3, '5b2f36d104574', 'Css', 1, 0, 2, 1, '2018-12-03 21:02:39', 'enabled'),
-(4, '5b2f38a4ae710', 'Php', 1, 0, 3, 1, '2018-12-03 21:02:32', 'enabled'),
-(5, '5b2f3a5b39e1c', 'Sql', 1, 0, 2, 1, '2018-10-09 04:19:54', 'disabled'),
-(6, '5bbb4fe0e56c6', 'Set A', 1, 0, 6, 3, '2018-12-03 21:02:34', 'enabled'),
-(7, '5bbb567c6c1ec', 'Set B', 1, 0, 6, 3, '2018-12-03 21:02:30', 'enabled'),
-(8, '5bbb58cff2fdc', 'Set C', 1, 0, 6, 3, '2018-12-03 21:02:31', 'enabled');
+(2, '5b2f35e7a2c9f', 'Html', 1, 0, 2, 1, '2018-12-09 17:27:10', 'disabled'),
+(3, '5b2f36d104574', 'Css', 1, 0, 2, 1, '2018-12-09 19:42:58', 'enabled'),
+(4, '5b2f38a4ae710', 'Php', 1, 0, 3, 1, '2018-12-09 19:43:03', 'enabled'),
+(5, '5b2f3a5b39e1c', 'Sql', 1, 0, 2, 1, '2018-12-09 19:43:01', 'enabled'),
+(6, '5bbb4fe0e56c6', 'Set A', 1, 0, 6, 3, '2018-12-09 17:27:07', 'enabled'),
+(7, '5bbb567c6c1ec', 'Set B', 1, 0, 6, 3, '2018-12-09 19:43:00', 'enabled'),
+(8, '5bbb58cff2fdc', 'Set C', 1, 0, 6, 3, '2018-12-09 19:42:59', 'enabled'),
+(9, '5c0d76ca8d731', 'Test Question', 5, 2, 5, 26, '2018-12-09 20:12:59', 'enabled');
 
 -- --------------------------------------------------------
 
@@ -400,13 +427,11 @@ CREATE TABLE `rank` (
 --
 
 INSERT INTO `rank` (`id`, `username`, `score`, `time`) VALUES
-(2, 'sharif', 4, '2018-12-03 17:27:54'),
 (3, 'sajib', 5, '2018-06-24 08:10:55'),
 (4, 'arif', 5, '2018-06-25 12:00:08'),
 (5, 'sakib', 1, '2018-07-05 15:25:38'),
 (6, 'mollah', 1, '2018-11-05 12:18:11'),
-(7, 'sharifa', 1, '2018-09-18 04:33:25'),
-(8, 'shibbirweb', 19, '2018-12-04 20:49:41');
+(8, 'shibbirweb', 21, '2018-12-09 20:39:05');
 
 -- --------------------------------------------------------
 
@@ -432,13 +457,10 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `name`, `rollno`, `branch`, `status`, `gender`, `username`, `phno`, `password`) VALUES
 (4, 'Arif Hasan', '1307052', 'ECE', 1, 'M', 'arif', 567, '0057666571e72786386d0ccb40f842d1'),
-(6, 'Sharif Mollah', '1307040', 'ECE', 1, 'M', 'mollah', 123, '0057666571e72786386d0ccb40f842d1'),
-(9, 'Rizwan Ahemd', '111', 'EEE', 1, 'M', 'rizwan', 121, '21232f297a57a5a743894a0e4a801fc3'),
-(3, 'Sajib', '1307061', 'CSE', 1, 'M', 'sajib', 345, '0057666571e72786386d0ccb40f842d1'),
+(6, 'Sharif Mollah', '1307040', 'ECE', 0, 'M', 'mollah', 123, '0057666571e72786386d0ccb40f842d1'),
+(3, 'Sajib', '1307061', 'CSE', 0, 'M', 'sajib', 345, '0057666571e72786386d0ccb40f842d1'),
 (5, 'Sakib', '1307045', 'IT', 1, 'M', 'sakib', 678, '0057666571e72786386d0ccb40f842d1'),
-(2, 'Sharif Hossain', '1307050', 'CSE', 1, 'M', 'sharif', 123, '0057666571e72786386d0ccb40f842d1'),
-(7, 'Sharifa', '1307041', 'IMSC', 1, 'F', 'sharifa', 123, '0057666571e72786386d0ccb40f842d1'),
-(8, 'Shibbir Ahmed', '121', 'CSE', 0, 'M', 'shibbirweb', 1766263681, '21232f297a57a5a743894a0e4a801fc3');
+(8, 'Shibbir Ahmed', '121', 'CSE', 1, 'M', 'shibbirweb', 1766263681, '21232f297a57a5a743894a0e4a801fc3');
 
 -- --------------------------------------------------------
 
@@ -493,7 +515,9 @@ INSERT INTO `user_answer` (`id`, `qid`, `ans`, `correctans`, `eid`, `username`) 
 (36, '5bbb5655e7277', '5bbb5655ef91c', '5bbb5655ef91c', '5bbb4fe0e56c6', 'shibbirweb'),
 (37, '5b2f39e7ab5a0', '5b2f39e7cd385', '5b2f39e7cd389', '5b2f38a4ae710', 'shibbirweb'),
 (38, '5b2f39e80368d', '5b2f39e80e195', '5b2f39e80e195', '5b2f38a4ae710', 'shibbirweb'),
-(39, '5b2f39e82ed41', '5b2f39e836f79', '5b2f39e836f79', '5b2f38a4ae710', 'shibbirweb');
+(39, '5b2f39e82ed41', '5b2f39e836f79', '5b2f39e836f79', '5b2f38a4ae710', 'shibbirweb'),
+(40, '5b2f3bb0bb581', '5b2f3bb0ef5e7', '5b2f3bb0ef5e7', '5b2f3a5b39e1c', 'shibbirweb'),
+(41, '5b2f3bb125651', '5b2f3bb12afa9', '5b2f3bb12afa9', '5b2f3a5b39e1c', 'shibbirweb');
 
 --
 -- Indexes for dumped tables
@@ -569,43 +593,43 @@ ALTER TABLE `user_answer`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `answer`
 --
 ALTER TABLE `answer`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `history`
 --
 ALTER TABLE `history`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `online`
 --
 ALTER TABLE `online`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `options`
 --
 ALTER TABLE `options`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
 
 --
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `quiz`
 --
 ALTER TABLE `quiz`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `rank`
@@ -617,13 +641,13 @@ ALTER TABLE `rank`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user_answer`
 --
 ALTER TABLE `user_answer`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
