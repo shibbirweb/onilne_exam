@@ -22,7 +22,7 @@ $password = stripslashes($password);
 $password = addslashes($password);
 $password = md5($password);
 
-$q3 = mysqli_query($con, "INSERT INTO user VALUES  (NULL,'$name', '$rollno','$branch','$gender' ,'$username' ,'$phno', '$password')");
+$q3 = mysqli_query($con, "INSERT INTO user(id,name,rollno,branch,gender,username,phno,password) VALUES  (NULL,'$name', '$rollno','$branch','$gender' ,'$username' ,'$phno', '$password')");
 if ($q3) {
     session_start();
     $_SESSION["username"] = $username;

@@ -136,6 +136,12 @@ if (@$_GET['q'] == 'quiz' && @$_GET['step'] == 2 && isset($_SESSION['6e447159425
     $total = @$_GET['t'];
     $ans   = $_POST['ans'];
     $qid   = @$_GET['qid'];
+
+    if ($sn == $total){
+        header("Location:account.php?q=quiz&step=2&eid=".$eid.'&n='.$sn.'&t='.$total.'&endquiz=end');
+        exit();
+    }
+
     $q = mysqli_query($con, "SELECT * FROM history WHERE username='$username' AND eid='$_GET[eid]' ") or die('Error197');
     if (mysqli_num_rows($q) > 0) {
         $q = mysqli_query($con, "SELECT * FROM history WHERE username='$_SESSION[username]' AND eid='$_GET[eid]' ") or die('Error197');
@@ -223,7 +229,12 @@ if (@$_GET['q'] == 'quiz' && @$_GET['step'] == 2 && isset($_SESSION['6e447159425
                     $q = mysqli_query($con, "UPDATE `history` SET `score`=$s,`level`=$sn,`wrong`=$w,date= NOW()  WHERE  username = '$username' AND eid = '$eid'") or die('Error12');
                 }
             }
-            header("location:account.php?q=quiz&step=2&eid=$eid&n=$sn&t=$total") or die('Error152');
+            if ($sn == $total){
+                header("location:account.php?q=quiz&step=2&eid=".$eid."&n=".($sn)."&t=".$total."&endquiz=end") or die('Error152');
+            }else{
+                header("location:account.php?q=quiz&step=2&eid=".$eid."&n=".($sn+1)."&t=".$total) or die('Error152');
+            }
+            //header("location:account.php?q=quiz&step=2&eid=$eid&n=$sn&t=$total") or die('Error152');
             
         } else {
             unset($_SESSION['6e447159425d2d']);
