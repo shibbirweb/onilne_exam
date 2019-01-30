@@ -89,11 +89,8 @@ if (@$_GET['q'] == 1) {
 
     <script>
         $(document).ready(function () {
-            var exampleVar = 1;
             setInterval(function(){
                 $('#auto-refresh').load('student-exam-list.php').fadeIn();
-                console.log('loaded '+exampleVar+' times');
-                exampleVar++;
             }, 1000)
         });
     </script>
