@@ -34,6 +34,11 @@ if ($_GET['eid'] && $_GET['username']) {
         $q = mysqli_query($con, "SELECT * FROM questions WHERE eid='$_GET[eid]'") or die('Error197');
         while ($row = mysqli_fetch_array($q)) {
             $question = $row['qns'];
+            if($row['qimage'] != null){
+                $qimage = $row['qimage'];
+            }else{
+                $qimage = null;
+            }
             $qid      = $row['qid'];
             $q2 = mysqli_query($con, "SELECT * FROM user_answer WHERE eid='$_GET[eid]' AND qid='$qid' AND username='$username'") or die('Error197');
             if (mysqli_num_rows($q2) > 0) {
@@ -56,16 +61,49 @@ if ($_GET['eid'] && $_GET['username']) {
                 $ans        = "Unanswered";
             }
             if ($correctans == $ans && $ans != "Unanswered") {
-                echo '<li><div style="font-size:16px;font-weight:bold;font-family:calibri;margin-top:20px;background-color:lightgreen;padding:10px;word-wrap:break-word;border:2px solid darkgreen;border-radius:10px;">' . $question . ' <span class="glyphicon glyphicon-ok" style="color:darkgreen"></span></div><br />';
+                ?>
+                <li>
+                <?php
+                if ($qimage != null){
+                    ?>
+                    <img class="img-thumbnail img-responsive" height="300px" width="400px;" src="qimages/<?php echo $qimage ?>" style="margin: 10px 0">
+                    <?php
+                }
+                ?>
+                <div style="font-size:16px;font-weight:bold;font-family:calibri;margin-top:20px;background-color:lightgreen;padding:10px;word-wrap:break-word;border:2px solid darkgreen;border-radius:10px;"><?php echo $question; ?> <span class="glyphicon glyphicon-ok" style="color:darkgreen"></span></div>
+                <br />
+                <?php
                 echo '<font style="font-size:14px;color:darkgreen"><b>Your Answer: </b></font><font style="font-size:14px;">' . $ans . '</font><br />';
                 echo '<font style="font-size:14px;color:darkgreen"><b>Correct Answer: </b></font><font style="font-size:14px;">' . $correctans . '</font><br />';
             }
             else if ($ans == "Unanswered") {
-                echo '<li><div style="font-size:16px;font-weight:bold;font-family:calibri;margin-top:20px;background-color:#f7f576;padding:10px;word-wrap:break-word;border:2px solid #b75a0e;border-radius:10px;">' . $question . ' </div><br />';
+                ?>
+                <li>
+                <?php
+                if ($qimage != null){
+                    ?>
+                    <img class="img-thumbnail img-responsive" height="300px" width="400px;" src="qimages/<?php echo $qimage ?>" style="margin: 10px 0">
+                    <?php
+                }
+                ?>
+                <div style="font-size:16px;font-weight:bold;font-family:calibri;margin-top:20px;background-color:#f7f576;padding:10px;word-wrap:break-word;border:2px solid #b75a0e;border-radius:10px;"><?php echo $question; ?></div>
+                <br />
+                <?php
                 echo '<font style="font-size:14px;color:darkgreen"><b>Correct Answer: </b></font><font style="font-size:14px;">' . $correctans . '</font><br />';
             }
             else {
-                echo '<li><div style="font-size:16px;font-weight:bold;font-family:calibri;margin-top:20px;background-color:#f99595;padding:10px;word-wrap:break-word;border:2px solid darkred;border-radius:10px;">' . $question . ' <span class="glyphicon glyphicon-remove" style="color:red"></span></div><br />';
+                ?>
+                <li>
+                <?php
+                if ($qimage != null){
+                    ?>
+                    <img class="img-thumbnail img-responsive" height="300px" width="400px;" src="qimages/<?php echo $qimage ?>" style="margin: 10px 0">
+                    <?php
+                }
+                ?>
+                <div style="font-size:16px;font-weight:bold;font-family:calibri;margin-top:20px;background-color:#f99595;padding:10px;word-wrap:break-word;border:2px solid darkred;border-radius:10px;"><?php echo $question; ?> <span class="glyphicon glyphicon-remove" style="color:red"></span>
+                </div><br />
+                <?php
                 echo '<font style="font-size:14px;color:darkgreen"><b>Your Answer: </b></font><font style="font-size:14px;">' . $ans . '</font><br />';
                 echo '<font style="font-size:14px;color:red"><b>Correct Answer: </b></font><font style="font-size:14px;">' . $correctans . '</font><br />';
 

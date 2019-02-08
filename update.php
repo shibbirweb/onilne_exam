@@ -57,6 +57,15 @@ if (isset($_SESSION['key'])) {
         $result = mysqli_query($con, "SELECT * FROM questions WHERE eid='$eid' ") or die('Error');
         while ($row = mysqli_fetch_array($result)) {
             $qid = $row['qid'];
+            $qimage = $row['qimage'];
+
+            if ($qimage != null){
+                $directory = 'qimages/';
+                if (file_exists($directory.$qimage)){
+                    unlink($directory.$qimage);
+                }
+            }
+
             $r1 = mysqli_query($con, "DELETE FROM options WHERE qid='$qid'") or die('Error');
             $r2 = mysqli_query($con, "DELETE FROM answer WHERE qid='$qid' ") or die('Error');
         }
@@ -88,8 +97,23 @@ if (isset($_SESSION['key'])) {
         $ch  = @$_GET['ch'];
         for ($i = 1; $i <= $n; $i++) {
             $qid  = uniqid();
+
+            if (isset($_FILES['qns_img'.$i]) && $_FILES['qns_img'.$i]['error'] != UPLOAD_ERR_NO_FILE){
+                $temp_img = $_FILES['qns_img'.$i]['tmp_name'];
+                $temp_ext = explode('.',$_FILES['qns_img'.$i]['name']);
+                $extension = strtolower(end($temp_ext));
+                $img_name = $qid.'.'.$extension;
+                $dir = 'qimages/';
+                if (!is_dir($dir)){
+                    mkdir($dir,0777,true);
+                }
+                move_uploaded_file($temp_img, $dir.$img_name);
+            }else{
+                $img_name = null;
+            }
+
             $qns  = addslashes($_POST['qns' . $i]);
-            $q3   = mysqli_query($con, "INSERT INTO questions VALUES  (NULL,'$eid','$qid','$qns' , '$ch' , '$i')") or die();
+            $q3   = mysqli_query($con, "INSERT INTO questions VALUES  (NULL,'$eid','$qid','$qns' , '$ch' , '$i', '$img_name')") or die();
             $oaid = uniqid();
             $obid = uniqid();
             $ocid = uniqid();

@@ -378,12 +378,18 @@ if (@$_GET['q'] == 4 && (@$_GET['step']) == 2) {
     echo ' 
 <div class="row">
 <span class="title1" style="margin-left:40%;font-size:30px;"><b>Enter Question Details</b></span><br /><br />
- <div class="col-md-3"></div><div class="col-md-6"><form class="form-horizontal title1" name="form" action="update.php?q=addqns&n=' . @$_GET['n'] . '&eid=' . @$_GET['eid'] . '&ch=4 "  method="POST">
+ <div class="col-md-3"></div><div class="col-md-6"><form class="form-horizontal title1" name="form" action="update.php?q=addqns&n=' . @$_GET['n'] . '&eid=' . @$_GET['eid'] . '&ch=4 "  method="POST" enctype="multipart/form-data">
 <fieldset>
 ';
     
     for ($i = 1; $i <= @$_GET['n']; $i++) {
         echo '<b>Question number&nbsp;' . $i . '&nbsp;:</><br /><!-- Text input-->
+<div class="form-group">
+  <label class="col-md-12 control-label" for="qns' . $i . ' "></label>  
+  <div class="col-md-12">
+  <input type="file" name="qns_img' . $i . '" class="form-control" accept="image/*"/> 
+  </div>
+</div>
 <div class="form-group">
   <label class="col-md-12 control-label" for="qns' . $i . ' "></label>  
   <div class="col-md-12">
