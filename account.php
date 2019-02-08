@@ -516,6 +516,8 @@ if (@$_GET['q'] == 2) {
     }
     echo '</table></div>';
 }
+
+
 if (@$_GET['q'] == 3) {
     if(isset($_GET['show'])){
         $show = $_GET['show'];
