@@ -1,3 +1,7 @@
+<?php
+    require_once 'lib/functions.php';
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,6 +17,9 @@
     <script src="js/jquery.js" type="text/javascript"></script>
 
     <script src="js/bootstrap.min.js"  type="text/javascript"></script>
+    <script src="js/jspdf.min.js"></script>
+    <script src="js/html2canvas.min.js"></script>
+    <script src="js/main.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
 
     <script>
@@ -97,6 +104,11 @@
                 if (@$_GET['q'] == 5)
                     echo 'class="active"';
                 ?>><a href="dash.php?q=5">Remove Quiz</a></li>
+
+                <li <?php
+                if (@$_GET['q'] == 7)
+                    echo 'class="active"';
+                ?>><a href="dash.php?q=7">View Result</a></li>
 
                 <li <?php
                 if (@$_GET['q'] == 6)

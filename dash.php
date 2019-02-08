@@ -97,9 +97,15 @@ if (@$_GET['q'] == 5)
 ?>><a href="dash.php?q=5">Remove Quiz</a></li>
 
 <li <?php
+if (@$_GET['q'] == 7)
+  echo 'class="active"';
+?>><a href="dash.php?q=7">View Result</a></li>
+
+<li <?php
 if (@$_GET['q'] == 6)
     echo 'class="active"';
 ?>><a href="dash.php?q=6">Active</a></li>
+
 
 
       </ul>
@@ -464,6 +470,11 @@ if (@$_GET['q'] == 5) {
  
  if (@$_GET['q'] == 6){
      include_once 'active.php';
+
+}
+
+ if ($_GET['q'] == 7){
+     include_once 'subject-wise-list.php';
 
 }
 	 
