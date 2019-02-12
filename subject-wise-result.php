@@ -27,7 +27,10 @@ $all_results = query($result_sql, MULTIPLE_RETURN);
 
 ?>
     <div class="panel">
-        <div class="row"><button class="btn btn-success pull-right" onclick="saveAsPDF();"> <span class="glyphicon glyphicon-cloud-download"></span> Download</button></div>
+        <div class="row">
+            <button class="btn btn-success pull-right" onclick="saveAsPDF();"> <span class="glyphicon glyphicon-cloud-download"></span> Save as PDF</button>
+            <a href="csv-generate.php?eid=<?php echo $eid; ?>" target="_blank" class="btn btn-info pull-right" style="margin-right: 5px;"> <span class="glyphicon glyphicon-file"></span> Save as CSV</a>
+        </div>
         <div id="print_area">
             <h1 class="text-center title" style="color:#660033;">Result</h1>
             <div class="text-center">
