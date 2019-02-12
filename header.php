@@ -56,7 +56,7 @@
             $username = $_SESSION['username'];
 
             include_once 'dbConnection.php';
-            echo '<span class="pull-right top title1" ><span style="color:white"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;Hello,</span> <span class="log log1" style="color:lightyellow">' . $name . '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="logout.php?q=account.php" style="color:lightyellow"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;Logout</button></a></span>';
+            echo '<span class="pull-right top title1" ><span style="color:white"><span class="glyphicon glyphicon-user"></span> Hello,</span> <span class="log log1" style="color:lightyellow">' . $name . '<a href="logout.php?q=account.php" style="color:lightyellow"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</button></a></span>';
         }
         ?>
 

@@ -321,9 +321,13 @@ var countdownTimer = setInterval(\'secondPassed()\', 1000);
 <a href="account.php?q=quiz&step=2&eid=' . $eid . '&n=' . ($sn + 1) . '&t=' . $total . '" class="btn btn-primary" style="height:30px">Skip</a>
 </form><br><br>';
             } else if (@$_GET[t] == @$_GET[n]) {
-                echo '<br />&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-default" disabled="true" id="sbutton" style="height:30px"><font style="font-size:12px;font-weight:bold">Submit</font></button>&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-default" onclick="frmreset()" style="height:30px"></span><font style="font-size:12px;font-weight:bold">Reset</font></button>&nbsp;&nbsp;&nbsp;&nbsp;</form><br><br>';
+                echo '<br />
+<button type="submit" class="btn btn-default" disabled="true" id="sbutton" style="height:30px"><font style="font-size:12px;font-weight:bold">Submit</font></button>
+<button type="button" class="btn btn-default" onclick="frmreset()" style="height:30px"></span><font style="font-size:12px;font-weight:bold">Reset</font></button>&nbsp;&nbsp;&nbsp;&nbsp;</form><br><br>';
             } else if (@$_GET[t] > @$_GET[n] && @$_GET[n] == 1) {
-                echo '<br />&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-default" disabled="true" id="sbutton" style="height:30px"><font style="font-size:12px;font-weight:bold">Submit<font></button>&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-default" onclick="frmreset()" style="height:30px"></span><font style="font-size:12px;font-weight:bold">Reset</font></button>&nbsp;&nbsp;&nbsp;&nbsp;<a href="account.php?q=quiz&step=2&eid=' . $eid . '&n=' . ($sn + 1) . '&t=' . $total . '" class="btn btn-primary" style="height:30px">Skip</a></form><br><br>';
+                echo '<br />
+<button type="submit" class="btn btn-default" disabled="true" id="sbutton" style="height:30px"><font style="font-size:12px;font-weight:bold">Submit<font></button>
+<button type="button" class="btn btn-default" onclick="frmreset()" style="height:30px"></span><font style="font-size:12px;font-weight:bold">Reset</font></button>&nbsp;&nbsp;&nbsp;&nbsp;<a href="account.php?q=quiz&step=2&eid=' . $eid . '&n=' . ($sn + 1) . '&t=' . $total . '" class="btn btn-primary" style="height:30px">Skip</a></form><br><br>';
             } else {
             }
             echo '</div>';

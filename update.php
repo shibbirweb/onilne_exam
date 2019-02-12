@@ -161,10 +161,10 @@ if (@$_GET['q'] == 'quiz' && @$_GET['step'] == 2 && isset($_SESSION['6e447159425
     $ans   = $_POST['ans'];
     $qid   = @$_GET['qid'];
 
-    if ($sn == $total){
+    /*if ($sn == $total){
         header("Location:account.php?q=quiz&step=2&eid=".$eid.'&n='.$sn.'&t='.$total.'&endquiz=end');
         exit();
-    }
+    }*/
 
     $q = mysqli_query($con, "SELECT * FROM history WHERE username='$username' AND eid='$_GET[eid]' ") or die('Error197');
     if (mysqli_num_rows($q) > 0) {
