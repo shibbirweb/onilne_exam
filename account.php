@@ -331,7 +331,7 @@ var countdownTimer = setInterval(\'secondPassed()\', 1000);
             } else {
             }
             echo '</div>';
-            echo '<div class="panel" style="text-align:center">';
+            echo '<div class="well" style="text-align:center">';
             $q = mysqli_query($con, "SELECT * FROM questions WHERE eid='$_GET[eid]'") or die("Error222");
             $i = 1;
             while ($row = mysqli_fetch_array($q)) {
@@ -345,15 +345,17 @@ var countdownTimer = setInterval(\'secondPassed()\', 1000);
                     $quesans[$ques[$row['qid']]] = true;
                 }
             }
+            echo '<ul class="nav nav-pills">';
             for ($i = 1; $i <= $total; $i++) {
-                echo '<a href="account.php?q=quiz&step=2&eid=' . $eid . '&n=' . $i . '&t=' . $total . '"  style="margin:5px;padding:5px;background-color:';
-                if ($quesans[$i]) {
+                echo '<li><a href="account.php?q=quiz&step=2&eid=' . $eid . '&n=' . $i . '&t=' . $total . '"  style="margin:5px;padding:5px;background-color:';
+                if (isset($quesans[$i]) && $quesans[$i]) {
                     echo "darkgreen";
                 } else {
-                    echo "darkred";
+                    echo "#989800";
                 }
-                echo ';color:white;font-size:16px;font-family:calibri;border-radius:4px">&nbsp;' . $i . '&nbsp;</a>';
+                echo ';color:white;font-size:16px;font-family:calibri;border-radius:4px">&nbsp;' . $i . '&nbsp;</a></li>';
             }
+            echo '</ul>';
         } else {
             unset($_SESSION['6e447159425d2d']);
             $q = mysqli_query($con, "UPDATE history SET status='finished' WHERE username='$_SESSION[username]' AND eid='$_GET[eid]' ") or die('Error197');
